@@ -42,18 +42,24 @@ void selectionSort(int list[], int n)
         {
             compareCount++; // 비교 횟수 증가
             if (list[j] < list[least])
+            {
                 least = j;
+            }
         }
-        SWAP(list[i], list[least], temp);
-        moveCount++; // 이동 횟수 증가
+
+        if (least != i) // 최솟값이 현재 위치와 다른 경우에만 이동 횟수 증가
+        {
+            SWAP(list[i], list[least], temp);
+            moveCount++; // 이동 횟수 증가
+        }
 
         printStep(i + 1, compareCount, moveCount);
     }
 
-    printf("Selection Sort 결과:\n");
-    printf("비교 횟수: %d\n", compareCount);
-    printf("이동 횟수: %d\n", moveCount);
-    printf("정렬 완료 후 배열: ");
+    printf("\nSelection Sort 결과:");
+    printf("\n비교 횟수: %d", compareCount);
+    printf("\n이동 횟수: %d", moveCount);
+    printf("\n정렬 완료 후 배열: ");
     comparePlus += compareCount;
     movePlus += moveCount;
     printArray(list, n);
