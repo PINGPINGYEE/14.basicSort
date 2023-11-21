@@ -28,6 +28,7 @@ void printStep(int step, int compareCount, int moveCount)
     printf("\n");
 }
 
+// 선택정렬렬
 void selectionSort(int list[], int n)
 {
     int i, j, least, temp;
@@ -58,6 +59,7 @@ void selectionSort(int list[], int n)
     printArray(list, n);
 }
 
+//삽입정렬
 void insertionSort(int list[], int n)
 {
     int i, j, key;
@@ -88,6 +90,8 @@ void insertionSort(int list[], int n)
     printArray(list, n);
 }
 
+
+//버블 정렬렬
 void bubbleSort(int list[], int n)
 {
     int i, j, temp;
